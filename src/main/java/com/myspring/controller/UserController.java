@@ -2,6 +2,7 @@ package com.myspring.controller;
 
 import java.util.Collection;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +35,21 @@ public class UserController {
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user){
 		return new ResponseEntity<User>(userService.addUser(user),HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+	public  ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id) {
+		User user = userService.getUser(id);
+		if (user == null ) {
+			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+		}
+		userService.deleteUser(id);
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE)
+	public ResponseEntity<Void> deleteUsers() {
+		userService.deleteUsers();
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 }

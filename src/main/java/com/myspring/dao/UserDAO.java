@@ -43,5 +43,25 @@ public class UserDAO {
 		users.put(user.getId(),user);
 		return user;
 	}
+	
+	public User findByID(Integer id){
+		return getUser(id);
+	}
+	
+	public void deleteUser(Integer id){
+		users.remove(id);
+	}
+	
+	public void deleteUsers() {
+		users.clear();
+		users = new HashMap<Integer,User>(){
+			{
+				put(1,new User(1,"User1","Group 1"));
+				put(2,new User(1,"User2","Group 2"));
+				put(3,new User(1,"User3","Group 3"));
+			}
+			
+		};
+	}
 }
 
