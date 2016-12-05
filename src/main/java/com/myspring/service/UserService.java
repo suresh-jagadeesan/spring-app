@@ -20,4 +20,7 @@ public class UserService {
 	public User getUser(Integer id) {
 		return userDAO.getUser(id);
 	}
+	public User addUser(User user) {
+		return userDAO.addUser(user);
+	}
 }

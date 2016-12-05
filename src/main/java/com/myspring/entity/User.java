@@ -14,9 +14,7 @@ public class User {
 	private String name;
 	private String group;
 	public User() {
-		id=0;
-		name="";
-		group="";
+
 	}
 	/**
 	 * @param id

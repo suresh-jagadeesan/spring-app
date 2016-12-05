@@ -3,6 +3,7 @@ package com.myspring.dao;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +29,19 @@ public class UserDAO {
 	}
 	public User getUser(Integer id){
 		return users.get(id);
+	}
+	public User addUser(User user) {
+		
+		Random randomGenerator = new Random();
+		try {
+			Thread.sleep(500);
+			user.setId(randomGenerator.nextInt(10000));
+		}
+		catch (Exception e) {
+			
+		}
+		users.put(user.getId(),user);
+		return user;
 	}
 }
 
