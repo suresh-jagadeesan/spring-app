@@ -18,8 +18,8 @@ public class UserDAO {
 		users = new HashMap<Integer,User>(){
 			{
 				put(1,new User(1,"User1","Group 1"));
-				put(2,new User(1,"User2","Group 2"));
-				put(3,new User(1,"User3","Group 3"));
+				put(2,new User(2,"User2","Group 2"));
+				put(3,new User(3,"User3","Group 3"));
 			}
 			
 		};
@@ -57,8 +57,8 @@ public class UserDAO {
 		users = new HashMap<Integer,User>(){
 			{
 				put(1,new User(1,"User1","Group 1"));
-				put(2,new User(1,"User2","Group 2"));
-				put(3,new User(1,"User3","Group 3"));
+				put(2,new User(2,"User2","Group 2"));
+				put(3,new User(3,"User3","Group 3"));
 			}
 			
 		};
